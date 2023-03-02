@@ -8,9 +8,9 @@ class DB{
 
     public function __construct(){
        $this->host= 'localhost';
-        $this->db= 'api';
+        $this->db= 'uni_2022_student';
         $this->user= 'root';
-        $this->password ="";
+        $this->password ='root';
         //$this->charset = 'utf8mb4';*/
     }
     function connect(){
