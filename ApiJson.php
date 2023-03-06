@@ -3,12 +3,18 @@ include_once 'Json.php';
 class ApiJsons{
 	public function getAll(){
     	$json = new Json();//tiene la conección a la bd
-    	$res = $json->getJsons();//trae la query a la BD
-    	$users = [];
+    	$queries_res = $json->getJsons();//trae la query a la BD
+		$keys=array_keys($queries_res);
+		foreach($queries_res as $key => $res){
+			$data[$key]=[];
     	while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
-			$users[] = $row;
+			$data[$key][]= $row;
 		}
-		return $users;
 	}
-}
+		return $data;
+	}
+	}
+	/*echo "<pre>";
+	print_r($keys);
+	echo "</pre>";*/
 ?>
