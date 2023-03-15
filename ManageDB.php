@@ -1,9 +1,10 @@
 <?php
 include_once 'DB.php';
-class Json extends DB{
-  public function getJsons(){
+class ManageBD extends DB{
+  public function getQueries(){
 
 	$advisor = $this->connect()->query('SELECT * FROM advisor');
+	
 	$classroom =$this->connect()->query('SELECT * FROM classroom');
 	$course=$this->connect()->query('SELECT * FROM course');
 	$department=$this->connect()->query('SELECT * FROM department');
